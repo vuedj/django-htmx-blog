@@ -1,0 +1,5 @@
+<div id="post--{{ post_id }}" hx-swap-oob="delete"></div>
+<div hx-swap-oob="innerHTML:#page--container">
+    <div class="placeholder">Select a story from the sidebar to view</div>
+</div>
+{% include "components/total.html" with total=total %}

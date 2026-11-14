@@ -1,0 +1,17 @@
+<div id="sidebar">
+    <div id="stories--header">
+        <div id="total" hx-get="/api/total/" hx-trigger="postDeleted from:body" hx-swap="innerHTML">
+            {% include "components/total.html" with total=total %}
+        </div>
+        <button class="btn"
+                type="button"
+                hx-post="/api/posts/"
+                hx-target="#post--snippets"
+                hx-swap="afterbegin">Write a story</button>
+    </div>
+    <div id="post--snippets">
+        {% for post in posts %}
+            {% include "components/snippet.html" %}
+        {% endfor %}
+    </div>
+</div>

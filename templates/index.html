@@ -1,0 +1,18 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div 
+    id="sidebar"
+    hx-trigger="load"
+    hx-get="/api/sidebar/"
+    hx-swap="outerHTML"
+></div>
+
+<div id="page--container">
+    {% if no_posts %}
+        <div class="placeholder">Select a story from the sidebar to view</div>
+    {% else %}
+        {% include 'components/post.html' %}
+    {% endif %}
+</div>
+{% endblock %}
